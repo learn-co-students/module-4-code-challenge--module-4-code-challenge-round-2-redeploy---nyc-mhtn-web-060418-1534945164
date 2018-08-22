@@ -1,6 +1,8 @@
 import React from 'react'
 
 const Transaction = (props) => {
+  // console.log(props);
+  
   return (
     <tr>
       <td>{props.one["posted_at"]}</td>

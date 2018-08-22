@@ -2,6 +2,8 @@ import React from 'react'
 import Transaction from './Transaction'
 
 const TransactionsList = (props) => {
+  // console.log(props);
+  
   let renderData = props.changingData.map((one)=>{
     return <Transaction key={one.id} one={one} />
   })

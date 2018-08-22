@@ -46,8 +46,13 @@ class AccountContainer extends Component {
 
     return (
       <div>
-        <Search searchTerm={this.state.searchTerm} handleChange={this.handleChange} />
-        <TransactionsList changingData={this.state.changingData} />
+        <Search 
+          searchTerm={this.state.searchTerm} 
+          handleChange={this.handleChange} 
+        />
+        <TransactionsList 
+          changingData={this.state.changingData} 
+        />
       </div>
     )
   }
