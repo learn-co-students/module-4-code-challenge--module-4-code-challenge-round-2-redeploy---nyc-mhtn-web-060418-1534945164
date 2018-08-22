@@ -1,14 +1,27 @@
 import React, { Component } from 'react'
 import TransactionsList from './TransactionsList'
 import Search from './Search'
-import {transactions} from '../transactionsData'
+// import {transactions} from '../transactionsData'
+
+const API = 'https://boiling-brook-94902.herokuapp.com/transactions'
 
 class AccountContainer extends Component {
 
   state = {
-    mainData: transactions,
-    changingData: transactions,
+    mainData: [],
+    changingData: [],
     searchTerm: ''
+  }
+
+  fetchAPI = () => {
+    return fetch(API).then(response=> response.json()).then(data=> this.setState({
+      mainData: data,
+      changingData: data
+    }))
+  }
+
+  componentDidMount() {
+    this.fetchAPI()
   }
 
   handleChange = (event) => {
